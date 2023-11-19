@@ -1,14 +1,20 @@
+import React from 'react';
 import "../src/TodoSearch.css";
+
+
 function TodoSearch() {
+
+
+  const [searchValue, setSearchValue] = React.useState("");
+
+
   return (
     <input
-      placeholder="Cut onion"
+      placeholder="Cortar cebolla"
       className="TodoSearch"
+      value={searchValue}
       onChange={(event) => {
-        console.log("Escribiste en el TodoSearch");
-        console.log(event);
-        console.log(event.target);
-        console.log(event.target.value); //Cada pequeno cambio, podemos saber el texto que escriben los usuarios
+        setSearchValue(event.target.value);
       }}
     />
   );
@@ -16,5 +22,3 @@ function TodoSearch() {
 
 
 export { TodoSearch };
-
-
